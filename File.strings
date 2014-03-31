@@ -1,0 +1,30 @@
+/* 
+  File.strings
+  IDCForIOS
+
+  Created by Mac on 13-12-26.
+  Copyright (c) 2013年 Mac. All rights reserved.
+*/
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+<type>web</type>
+<class>com.cntomorrow.mobile.framework.factory.actiondo.WebAction</class>
+</action>
+<action>
+<type>plugapp</type>
+<class>com.cntomorrow.mobile.framework.factory.actiondo.PlugappAction</class>
+</action>
+<action>
+<type>contextapp</type>
+<class>com.cntomorrow.mobile.framework.factory.actiondo.ContextappAction</class>
+</action>
+<action>
+<type>system</type>
+<class>com.cntomorrow.mobile.framework.factory.actiondo.SystemAction</class>
+</action>
+<action>
+<type>webservice</type>
+<class>com.cntomorrow.mobile.framework.factory.actiondo.WebServiceAction</class>
+</action>
+</actions>

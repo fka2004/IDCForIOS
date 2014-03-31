@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "CNWelcomeViewController.h"
 
+#import "AppUtils.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -16,6 +18,25 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    //获取系统信息
+    self.appInfo = [[NSMutableDictionary alloc]init];
+    NSString *imei = [AppUtils getImei];
+    if(!imei){
+        imei = @"123imei";
+    }
+    NSString *imsi = [AppUtils getImsi];
+    if(!imsi){
+        imsi = @"123imsi";
+    }
+
+    NSString *model = [AppUtils getDeviceModel];
+    [self.appInfo setObject:imei forKey:@"imei"];
+    [self.appInfo setObject:imsi forKey:@"imsi"];
+    [self.appInfo setObject:model forKey:@"model"];
+    [self.appInfo setObject:imei forKey:@"uuid"];
+    
+    CNWelcomeViewController *welcomeViewController = [[CNWelcomeViewController alloc]init];
+    self.window.rootViewController = welcomeViewController;
     return YES;
 }
 
